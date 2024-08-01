@@ -1,3 +1,5 @@
+package br.com.mitugui.screenmatch.models;
+
 public class Film {
     private String name;
     private int releaseYear;

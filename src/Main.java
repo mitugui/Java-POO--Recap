@@ -1,3 +1,5 @@
+import br.com.mitugui.screenmatch.models.Film;
+
 public class Main {
     public static void main(String[] args) {
         Film myFilm = new Film();
