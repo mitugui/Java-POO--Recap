@@ -1,9 +1,12 @@
 package br.com.mitugui.screenmatch.models;
 
-public class Episode {
-    private  int number;
-    private  String name;
-    private  Serie serie;
+import br.com.mitugui.screenmatch.calculations.Classifiable;
+
+public class Episode implements Classifiable {
+    private int number;
+    private String name;
+    private Serie serie;
+    private int totalViews;
 
     public int getNumber() {
         return number;
@@ -27,5 +30,22 @@ public class Episode {
 
     public void setSerie(Serie serie) {
         this.serie = serie;
+    }
+
+    public int getTotalViews() {
+        return totalViews;
+    }
+
+    public void setTotalViews(int totalViews) {
+        this.totalViews = totalViews;
+    }
+
+    @Override
+    public int getClassfication() {
+        if (totalViews > 100) {
+            return 4;
+        } else {
+            return 2;
+        }
     }
 }
