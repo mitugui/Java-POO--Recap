@@ -1,7 +1,7 @@
 import br.com.mitugui.screenmatch.calculations.RecommendationFilter;
 import br.com.mitugui.screenmatch.calculations.TimeCalculator;
 import br.com.mitugui.screenmatch.models.Film;
-import br.com.mitugui.screenmatch.models.Serie;
+import br.com.mitugui.screenmatch.models.Series;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Main {
         );
         otherFilm.rate(9);
 
-        Serie favoriteSerie = new Serie(
+        Series favoriteSeries = new Series(
                 "The Office",
                 2005,
                 true,
@@ -32,12 +32,12 @@ public class Main {
                 22,
                 22
         );
-        favoriteSerie.rate(9);
+        favoriteSeries.rate(9);
 
         TimeCalculator calculator = new TimeCalculator();
         calculator.include(favoriteFilm);
         calculator.include(otherFilm);
-        calculator.include(favoriteSerie);
+        calculator.include(favoriteSeries);
         System.out.println(calculator.getTotalTime());
 
         RecommendationFilter filter = new RecommendationFilter();

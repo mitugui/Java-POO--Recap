@@ -1,12 +1,12 @@
 package br.com.mitugui.screenmatch.models;
 
-public class Serie extends Title {
+public class Series extends Title {
     private int seasons;
     private boolean active;
     private int episodesPerSeason;
     private int minutesPerEpisode;
 
-    public Serie(
+    public Series(
             String name,
             int releaseYear,
             boolean includedInPlan,
