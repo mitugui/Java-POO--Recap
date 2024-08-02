@@ -41,7 +41,7 @@ public class Episode implements Classifiable {
     }
 
     @Override
-    public int getClassfication() {
+    public int getClassification() {
         if (totalViews > 100) {
             return 4;
         } else {

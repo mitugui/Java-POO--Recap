@@ -14,7 +14,7 @@ public class Film extends Title implements Classifiable {
     }
 
     @Override
-    public int getClassfication() {
+    public int getClassification() {
         return (int) getAverage() / 2;
     }
 }
