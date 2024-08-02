@@ -5,7 +5,7 @@ import br.com.mitugui.screenmatch.calculations.Classifiable;
 public class Episode implements Classifiable {
     private int number;
     private String name;
-    private Series serie;
+    private Series series;
     private int totalViews;
 
     public int getNumber() {
@@ -24,12 +24,12 @@ public class Episode implements Classifiable {
         this.name = name;
     }
 
-    public Series getSerie() {
-        return serie;
+    public Series getSeries() {
+        return series;
     }
 
-    public void setSerie(Series serie) {
-        this.serie = serie;
+    public void setSeries(Series series) {
+        this.series = series;
     }
 
     public int getTotalViews() {
