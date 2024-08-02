@@ -1,10 +1,46 @@
+import br.com.mitugui.screenmatch.calculations.RecommendationFilter;
+import br.com.mitugui.screenmatch.calculations.TimeCalculator;
 import br.com.mitugui.screenmatch.models.Film;
+import br.com.mitugui.screenmatch.models.Serie;
 
 public class Main {
     public static void main(String[] args) {
-        Film myFilm = new Film();
-        myFilm.setName("Godzilla Minus One");
+        Film favoriteFilm = new Film(
+                "Godzilla Minus One",
+                2023,
+                true,
+                125,
+                "Takashi Hamazaki"
+        );
+        favoriteFilm.rate(10);
 
-        System.out.println(myFilm.getName());
+        Film otherFilm = new Film(
+                "The Boy and the Heron",
+                2023,
+                true,
+                124,
+                "Hayao Miyazaki"
+        );
+        otherFilm.rate(9);
+
+        Serie favoriteSerie = new Serie(
+                "The Office",
+                2005,
+                true,
+                9,
+                false,
+                22,
+                22
+        );
+        favoriteSerie.rate(9);
+
+        TimeCalculator calculator = new TimeCalculator();
+        calculator.include(favoriteFilm);
+        calculator.include(otherFilm);
+        calculator.include(favoriteSerie);
+        System.out.println(calculator.getTotalTime());
+
+        RecommendationFilter filter = new RecommendationFilter();
+        filter.filter(favoriteFilm);
     }
 }

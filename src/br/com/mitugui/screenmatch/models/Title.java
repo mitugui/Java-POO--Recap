@@ -8,6 +8,27 @@ public class Title {
     private int totalRatings;
     private int durationInMinutes;
 
+    public Title(
+            String name,
+            int releaseYear,
+            boolean includedInPlan,
+            int durationInMinutes
+    ) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+        this.includedInPlan = includedInPlan;
+        this.durationInMinutes = durationInMinutes;
+    }
+    public Title(
+            String name,
+            int releaseYear,
+            boolean includedInPlan
+    ) {
+        this.name = name;
+        this.releaseYear = releaseYear;
+        this.includedInPlan = includedInPlan;
+    }
+
     public void displayTechnicalSheet () {
         System.out.println("Nome do filme: " + name);
         System.out.println("Ano de lançamento: " + releaseYear);

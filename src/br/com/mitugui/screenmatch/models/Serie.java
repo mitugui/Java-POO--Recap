@@ -6,6 +6,22 @@ public class Serie extends Title {
     private int episodesPerSeason;
     private int minutesPerEpisode;
 
+    public Serie(
+            String name,
+            int releaseYear,
+            boolean includedInPlan,
+            int seasons,
+            boolean active,
+            int episodesPerSeason,
+            int minutesPerEpisode
+    ) {
+        super(name, releaseYear, includedInPlan);
+        this.seasons = seasons;
+        this.active = active;
+        this.episodesPerSeason = episodesPerSeason;
+        this.minutesPerEpisode = minutesPerEpisode;
+    }
+
     public int getSeasons() {
         return seasons;
     }

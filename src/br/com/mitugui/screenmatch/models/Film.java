@@ -5,6 +5,17 @@ import br.com.mitugui.screenmatch.calculations.Classifiable;
 public class Film extends Title implements Classifiable {
     private String director;
 
+    public Film(
+            String name,
+            int releaseYear,
+            boolean includedInPlan,
+            int durationInMinutes,
+            String director
+    ) {
+        super(name, releaseYear, includedInPlan, durationInMinutes);
+        this.director = director;
+    }
+
     public String getDirector() {
         return director;
     }
