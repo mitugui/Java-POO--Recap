@@ -1,3 +1,5 @@
+package br.com.mitugui.screenmatch.main;
+
 import br.com.mitugui.screenmatch.calculations.RecommendationFilter;
 import br.com.mitugui.screenmatch.calculations.TimeCalculator;
 import br.com.mitugui.screenmatch.models.Film;
@@ -28,7 +30,6 @@ public class Main {
         Series favoriteSeries = new Series(
                 "The Office",
                 2005,
-                true,
                 9,
                 false,
                 22,
