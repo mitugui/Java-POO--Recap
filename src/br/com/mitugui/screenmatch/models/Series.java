@@ -9,13 +9,12 @@ public class Series extends Title {
     public Series(
             String name,
             int releaseYear,
-            boolean includedInPlan,
             int seasons,
             boolean active,
             int episodesPerSeason,
             int minutesPerEpisode
     ) {
-        super(name, releaseYear, includedInPlan);
+        super(name, releaseYear);
         this.seasons = seasons;
         this.active = active;
         this.episodesPerSeason = episodesPerSeason;

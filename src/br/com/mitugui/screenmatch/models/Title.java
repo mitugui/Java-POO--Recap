@@ -21,12 +21,10 @@ public class Title {
     }
     public Title(
             String name,
-            int releaseYear,
-            boolean includedInPlan
+            int releaseYear
     ) {
         this.name = name;
         this.releaseYear = releaseYear;
-        this.includedInPlan = includedInPlan;
     }
 
     public void displayTechnicalSheet () {
