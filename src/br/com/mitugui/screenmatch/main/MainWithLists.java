@@ -5,6 +5,7 @@ import br.com.mitugui.screenmatch.models.Series;
 import br.com.mitugui.screenmatch.models.Title;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainWithLists {
     public static void main(String[] args) {
@@ -47,5 +48,9 @@ public class MainWithLists {
                 System.out.println("Classificação: " + film.getClassification());
             }
         }
+
+        System.out.println(watchedList);
+        Collections.sort(watchedList);
+        System.out.println(watchedList);
     }
 }
