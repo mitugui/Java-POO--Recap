@@ -3,6 +3,8 @@ import br.com.mitugui.screenmatch.calculations.TimeCalculator;
 import br.com.mitugui.screenmatch.models.Film;
 import br.com.mitugui.screenmatch.models.Series;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Film favoriteFilm = new Film(
@@ -42,5 +44,10 @@ public class Main {
 
         RecommendationFilter filter = new RecommendationFilter();
         filter.filter(favoriteFilm);
+
+        ArrayList<Film> filmList = new ArrayList<>();
+        filmList.add(favoriteFilm);
+        filmList.add(otherFilm);
+        System.out.println(filmList);
     }
 }

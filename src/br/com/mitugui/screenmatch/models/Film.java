@@ -28,4 +28,9 @@ public class Film extends Title implements Classifiable {
     public int getClassification() {
         return (int) getAverage() / 2;
     }
+
+    @Override
+    public String toString() {
+        return this.getName() + " (" + this.getReleaseYear() + ")";
+    }
 }
