@@ -6,6 +6,7 @@ import br.com.mitugui.screenmatch.models.Title;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class MainWithLists {
     public static void main(String[] args) {
@@ -51,6 +52,9 @@ public class MainWithLists {
 
         System.out.println(watchedList);
         Collections.sort(watchedList);
+        System.out.println(watchedList);
+
+        watchedList.sort(Comparator.comparing(Title::getReleaseYear));
         System.out.println(watchedList);
     }
 }
