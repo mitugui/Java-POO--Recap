@@ -1,11 +1,10 @@
 package br.com.mitugui.screenmatch.models;
 
+import br.com.mitugui.screenmatch.records.TitleOmdb;
 import com.google.gson.annotations.SerializedName;
 
 public class Title implements Comparable<Title> {
-    @SerializedName("Title")
     private String name;
-    @SerializedName("Year")
     private int releaseYear;
     private boolean includedInPlan;
     private double ratingSum;
@@ -29,6 +28,13 @@ public class Title implements Comparable<Title> {
     ) {
         this.name = name;
         this.releaseYear = releaseYear;
+    }
+
+    public Title(TitleOmdb titleOmdb) {
+        this.name = titleOmdb.title();
+        this.releaseYear = Integer.parseInt(titleOmdb.year());
+        // Gambiarra pra não quebrar o código por enquanto
+        this.durationInMinutes = Integer.parseInt(titleOmdb.runtime().substring(0,2));
     }
 
     public void displayTechnicalSheet () {
@@ -88,6 +94,6 @@ public class Title implements Comparable<Title> {
 
     @Override
     public String toString() {
-        return "Título: " + this.name + " ("+ this.releaseYear +")";
+        return "Título: " + this.name + " ("+ this.releaseYear +"), duração: " + durationInMinutes + " min";
     }
 }
