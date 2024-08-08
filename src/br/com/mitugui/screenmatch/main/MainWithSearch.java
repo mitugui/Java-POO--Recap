@@ -1,5 +1,6 @@
 package br.com.mitugui.screenmatch.main;
 
+import br.com.mitugui.screenmatch.exceptions.YearConversionException;
 import br.com.mitugui.screenmatch.models.Title;
 import br.com.mitugui.screenmatch.records.TitleOmdb;
 import com.google.gson.FieldNamingPolicy;
@@ -44,7 +45,8 @@ public class MainWithSearch {
             Title searchedTitle = new Title(searchedTitleOmdb);
             System.out.println("Resultado da pesquisa: " + searchedTitle);
         } catch (NumberFormatException e) {
-            System.out.println("Aconteceu um erro");
+            System.out.println(e.getMessage());
+        } catch (YearConversionException e) {
             System.out.println(e.getMessage());
         }
 

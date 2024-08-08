@@ -1,5 +1,6 @@
 package br.com.mitugui.screenmatch.models;
 
+import br.com.mitugui.screenmatch.exceptions.YearConversionException;
 import br.com.mitugui.screenmatch.records.TitleOmdb;
 import com.google.gson.annotations.SerializedName;
 
@@ -32,6 +33,11 @@ public class Title implements Comparable<Title> {
 
     public Title(TitleOmdb titleOmdb) {
         this.name = titleOmdb.title();
+
+        if (titleOmdb.year().length() > 4) {
+            throw new YearConversionException("Não foi possível converter o ano por possuir mais de 4 caracteres");
+        }
+
         this.releaseYear = Integer.parseInt(titleOmdb.year());
         // Gambiarra pra não quebrar o código por enquanto
         this.durationInMinutes = Integer.parseInt(titleOmdb.runtime().substring(0,2));
