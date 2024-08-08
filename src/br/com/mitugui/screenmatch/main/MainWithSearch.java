@@ -15,9 +15,11 @@ import java.util.Scanner;
 
 public class MainWithSearch {
     public static void main(String[] args) throws IOException, InterruptedException {
+        try {
         Scanner scan = new Scanner(System.in);
         System.out.println("Digite um filme para a busca: ");
         var search = scan.nextLine();
+        scan.close();
         String KEY = "";
 
         String address = "http://www.omdbapi.com/?t=" + search + "&apikey=" + KEY;
@@ -37,8 +39,16 @@ public class MainWithSearch {
                 .create();
 
         TitleOmdb searchedTitleOmdb = gson.fromJson(json, TitleOmdb.class);
-        // System.out.println(searchedTitleOmdb);
-        Title searchedTitle = new Title(searchedTitleOmdb);
-        System.out.println("Resultado da pesquisa: " + searchedTitle);
+        // try {
+            Title searchedTitle = new Title(searchedTitleOmdb);
+            System.out.println("Resultado da pesquisa: " + searchedTitle);
+        } catch (NumberFormatException e) {
+            System.out.println("Aconteceu um erro");
+            System.out.println(e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Algum erro de argumento na busca, verifique o endereço");
+        }
+
+        System.out.println("O programa finalizou corretamente");
     }
 }
