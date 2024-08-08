@@ -8,6 +8,7 @@ import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
@@ -22,7 +23,7 @@ public class MainWithSearch {
         scan.close();
         String KEY = "";
 
-        String address = "http://www.omdbapi.com/?t=" + search + "&apikey=" + KEY;
+        String address = "http://www.omdbapi.com/?t=" + URLEncoder.encode(search, "UTF-8") + "&apikey=" + KEY;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -45,8 +46,6 @@ public class MainWithSearch {
         } catch (NumberFormatException e) {
             System.out.println("Aconteceu um erro");
             System.out.println(e.getMessage());
-        } catch (IllegalArgumentException e) {
-            System.out.println("Algum erro de argumento na busca, verifique o endereço");
         }
 
         System.out.println("O programa finalizou corretamente");
