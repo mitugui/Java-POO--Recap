@@ -34,7 +34,7 @@ public class MainWithSearch {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         String json = response.body();
-        System.out.println(json);
+        // System.out.println(json);
 
         Gson gson = new GsonBuilder()
                 .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
@@ -50,6 +50,6 @@ public class MainWithSearch {
             System.out.println(e.getMessage());
         }
 
-        System.out.println("O programa finalizou corretamente");
+                System.out.print("-- O programa finalizou corretamente. --");
     }
 }
