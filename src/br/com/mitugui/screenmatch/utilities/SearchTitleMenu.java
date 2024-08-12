@@ -19,8 +19,9 @@ public class SearchTitleMenu {
             if (API_KEY == null || API_KEY.isEmpty()) {
                 throw new MissingApiKeyException("A Api Key não está definida. Verifique as variáveis de ambiente.");
             }
+
             while (true) {
-                System.out.println("---------------------------------------------------------------");
+                System.out.println("-------------------------------------------------------------------");
                 System.out.println("Digite um filme para buscar ou \"sair\" para encerrar o programa:");
                 String search = sc.nextLine();
 
@@ -31,7 +32,10 @@ public class SearchTitleMenu {
                         + "&apikey=" + API_KEY;
 
                 QueryTitle query = new QueryTitle();
-                titles.add(query.queryTitle(address, gson));
+                Title searched = query.queryTitle(address, gson);
+                if (searched != null) {
+                    titles.add(searched);
+                }
             }
         } catch (UnsupportedEncodingException e) {
             System.err.println("Erro de codificação: " + e.getMessage());
@@ -40,6 +44,7 @@ public class SearchTitleMenu {
         } catch (MissingApiKeyException e) {
             System.err.println("Erro de API Key: " + e.getMessage());
         } finally {
+            System.out.println("-------------------------------------------------------------------");
             sc.close();
         }
     }
