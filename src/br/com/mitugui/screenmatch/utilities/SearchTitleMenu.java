@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SearchTitleMenu {
-    public void searchTitle(Gson gson, List<Title> titles) {
+    public void searchTitle(List<Title> titles, Gson gson) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         String API_KEY = System.getenv("API_KEY");
 
@@ -37,8 +37,6 @@ public class SearchTitleMenu {
             System.err.println("Erro de codificação: " + e.getMessage());
         } catch (IOException e) {
             System.err.println("Erro de entrada/saída ao buscar o título: " + e.getMessage());
-        } catch (InterruptedException e) {
-            System.err.println(e.getMessage());
         } catch (MissingApiKeyException e) {
             System.err.println("Erro de API Key: " + e.getMessage());
         } finally {
