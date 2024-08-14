@@ -2,6 +2,7 @@ package br.com.mitugui.screenmatch.utilities;
 
 import br.com.mitugui.screenmatch.exceptions.MissingApiKeyException;
 import br.com.mitugui.screenmatch.models.Title;
+import br.com.mitugui.screenmatch.services.QueryTitle;
 import com.google.gson.Gson;
 
 import java.io.IOException;

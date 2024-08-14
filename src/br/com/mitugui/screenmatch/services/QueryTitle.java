@@ -1,4 +1,4 @@
-package br.com.mitugui.screenmatch.utilities;
+package br.com.mitugui.screenmatch.services;
 
 import br.com.mitugui.screenmatch.models.Title;
 import br.com.mitugui.screenmatch.records.TitleOmdb;
